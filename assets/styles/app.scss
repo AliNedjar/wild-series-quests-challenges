@@ -1,0 +1,22 @@
+@import "~bootstrap/scss/bootstrap";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+$primary-color: #141414;
+$text-color: #eff7e0;
+$secondary-color: #808080;
+
+$font-text: 'Roboto', sans-serif;
+
+body {
+    background-color: $primary-color;
+    font-family: $font-text;
+    color: $secondary-color;
+}
+
+h1, h2 {
+    color: $text-color;
+}
+
+@import "_navbar.scss";
+
