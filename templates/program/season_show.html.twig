@@ -1,0 +1,11 @@
+{%  extends 'base.html.twig' %}
+{% block body%}
+    <div>Série - {{ program.title }} | Saison {{ season.number }}</div>
+    <div>Description : {{ season.description }}</div>
+    {%  for episode in episodes %}
+        <div>{{ episode.number }} : {{ episode.title }}</div>
+        <div>{{ episode.synopsis }}</div>
+    {% else %}
+        Aucun épisode, va au lit !
+    {% endfor %}
+{% endblock %}
