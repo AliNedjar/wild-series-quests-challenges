@@ -1,0 +1,10 @@
+{% extends "base.html.twig" %}
+
+{% block title %}{{ parent() }} - Nouveau Programme{% endblock %}
+{% block body %}
+    <h1>Ajouter un programme</h1>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <input type='submit' value='Ajouter un programme'>
+    {{ form_end(form) }}
+{% endblock %}
