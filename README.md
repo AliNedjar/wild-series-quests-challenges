@@ -6,3 +6,6 @@ https://www.loom.com/share/a7f93141b4f04418a8de016f4cd0f18e
 
 Quête 11:
 https://www.loom.com/share/4d3cadc0f05a46d193439b53f69c8411
+
+Quête 12:
+https://www.loom.com/share/9b469c7554ea4f078eff550a62f38cd3
