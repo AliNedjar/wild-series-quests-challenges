@@ -6,6 +6,7 @@ use App\Entity\Episode;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use App\Entity\Season;
 
 class EpisodeType extends AbstractType
 {
@@ -15,7 +16,9 @@ class EpisodeType extends AbstractType
             ->add('title')
             ->add('number')
             ->add('synopsis')
-            ->add('season', null, ['choice_label' => 'number'])
+            ->add('season', null, ['choice_label' => function (Season $season) {
+                return $season->getProgram()->getTitle() . ' - S' . $season->getNumber();
+            }]);
         ;
     }
 
