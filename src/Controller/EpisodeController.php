@@ -13,6 +13,9 @@ use App\Service\Slugify;
 use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
+use App\Entity\User;
+use App\Form\CommentType;
+use App\Entity\Comment;
 
 /**
  * @Route("/episode")
