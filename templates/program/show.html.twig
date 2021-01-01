@@ -34,5 +34,7 @@
     </a>
 
     </ul>
-
+    {% if is_granted("ROLE_ADMIN") %}
+        <a href="{{ path('program_edit', { 'slug': program.slug} ) }}">Éditer</a>
+    {%endif%}
 {% endblock %}

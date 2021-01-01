@@ -13,13 +13,19 @@
 
     <h3> Commentaires : </h3>
     <ul>
-        {% for comment in episode.comments %}
-            <li>De : {{ comment.user.email }} <br>
-                Note : {{ comment.rate }} <br>
-                Commentaire : {{ comment.comment }}
-            </li>
-        {% endfor %}
-    </ul>
+    {% for comment in episode.comments %}
+        <li>De : {{ comment.user.email }} <br>
+            Note : {{ comment.rate }} <br>
+            Commentaire : {{ comment.comment }}
+        </li>
+
+        </ul>
+        {% if app.user %}
+            {% if is_granted("ROLE_ADMIN") or app.user.email == comment.user.email %}
+                {{ include('program/_delete_comment.html.twig') }}
+            {% endif %}
+        {% endif %}
+    {% endfor %}
     {% if app.user %}
         <h3>Ajouter un commentaire</h3>
         {{ include('episode/_form.html.twig') }}
