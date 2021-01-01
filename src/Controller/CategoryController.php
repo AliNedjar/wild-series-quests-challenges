@@ -13,6 +13,7 @@ use App\Repository\CategoryRepository;
 use App\Repository\ProgramRepository;
 use App\Form\CategoryType;
 use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
  * Class CategoryController
@@ -40,6 +41,7 @@ class CategoryController extends AbstractController
      *
      * @Route("/new", name="new")
      * @param Request $request
+     * @IsGranted("ROLE_ADMIN")
      * @return Response
      */
     public function new(Request $request) : Response
