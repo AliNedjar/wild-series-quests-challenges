@@ -15,6 +15,7 @@ use App\Entity\Episode;
 use App\Service\Slugify;
 use App\Repository\ProgramRepository;
 use App\Form\ProgramType;
+use App\Form\SearchProgramType;
 use Symfony\Component\HttpFoundation\Request;
 use App\Form\CommentType;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
@@ -29,17 +30,26 @@ Class ProgramController extends AbstractController
     /**
      *
      * @Route("/", name="index")
+     * @param Request $request
      * @param ProgramRepository $programRepository
      * @return Response A response instance
      */
-    public function index(ProgramRepository $programRepository): Response
+    public function index(Request $request, ProgramRepository $programRepository): Response
     {
+        $form = $this->createForm(SearchProgramType::class);
+        $form->handleRequest($request);
 
-        $programs = $programRepository->findAll();
+        if ($form->isSubmitted() && $form->isValid()) {
+            $search = $form->getData()['rechercher'];
+            $programs = $programRepository->findLikeName($search);
+        } else {
+            $programs = $programRepository->findAll();
+        }
 
-        return $this->render('program/index.html.twig',
-            ['programs' => $programs]
-        );
+        return $this->render('program/index.html.twig', [
+            'programs' => $programs,
+            'form' => $form->createView(),
+        ]);
     }
 
     /**
