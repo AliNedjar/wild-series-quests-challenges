@@ -59,6 +59,7 @@ class EpisodeController extends AbstractController
                 ->html($this->renderView('episode/newEpisodeEmail.html.twig', ['episode' => $episode]));
 
             $mailer->send($email);
+            $this->addFlash('success', 'Episode ajouté');
 
             return $this->redirectToRoute('episode_index');
         }
@@ -96,6 +97,7 @@ class EpisodeController extends AbstractController
             $episode->setSlug($slug);
             $entityManager->persist($episode);
             $entityManager->flush();
+            $this->addFlash('success', 'Episode modifié');
 
             return $this->redirectToRoute('episode_index');
         }
@@ -119,6 +121,7 @@ class EpisodeController extends AbstractController
             $entityManager->remove($episode);
             $entityManager->flush();
         }
+        $this->addFlash('danger', 'Episode supprimé');
 
         return $this->redirectToRoute('episode_index');
     }
