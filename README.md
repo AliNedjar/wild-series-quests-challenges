@@ -39,3 +39,6 @@ https://www.loom.com/share/839c2ee9e1ea4fe0bc911d9e3852457d
 
 Quête 22:
 https://www.loom.com/share/3cd4a8d9884a4cd88ba69cacefa355a5
+
+Quête 23:
+https://www.loom.com/share/1b11673286ff4cef90ed1fc205b260ce

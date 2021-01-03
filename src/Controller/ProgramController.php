@@ -165,6 +165,7 @@ Class ProgramController extends AbstractController
             $comment->setUser($this->getUser());
             $entityManager->persist($comment);
             $entityManager->flush();
+            $this->addFlash('success', 'Commentaire publié');
             return $this->redirectToRoute('program_index');
         }
         return $this->render('program/episode_show.html.twig', [
@@ -239,6 +240,8 @@ Class ProgramController extends AbstractController
             $entityManager->remove($comment);
             $entityManager->flush();
         }
+        $this->addFlash('danger', 'Commentaire supprimé');
+
         return $this->redirectToRoute('program_index');
     }
 
