@@ -36,3 +36,6 @@ https://www.loom.com/share/64fb4305750045e5b2ccde0cda9eee78
 
 Quête 21:
 https://www.loom.com/share/839c2ee9e1ea4fe0bc911d9e3852457d
+
+Quête 22:
+https://www.loom.com/share/3cd4a8d9884a4cd88ba69cacefa355a5
